@@ -17,7 +17,7 @@ export function CalendarControls({ currentMonth, onPrev, onNext, onToday }: Cale
                 <Button onClick={onPrev} variant="ghost" size="icon" className="rounded-full hover:bg-muted cursor-pointer">
                     <ChevronLeft className="h-5 w-5" />
                 </Button>
-                <h3 className="text-2xl font-bold w-48 text-center capitalize">{format(currentMonth, 'MMMM yyyy', { locale: vi })}</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold w-32 sm:w-40 md:w-48 text-center capitalize">{format(currentMonth, 'MMMM yyyy', { locale: vi })}</h3>
                 <Button onClick={onNext} variant="ghost" size="icon" className="rounded-full hover:bg-muted cursor-pointer">
                     <ChevronRight className="h-5 w-5" />
                 </Button>
