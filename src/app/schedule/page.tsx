@@ -23,38 +23,41 @@ export default function SchedulePage() {
     } = useScheduleCalendar();
 
     return (
-        <div className="relative flex min-h-screen flex-col overflow-hidden bg-background">
+        <>
             <BeerBubbles />
             <Header />
-            <div className="h-16" />
-
-            <main className="relative z-10 flex-1">
-                <Container className="py-8 sm:py-12 flex flex-col gap-8">
-                    {/* Hero & Legend */}
-                    <div className="flex flex-col lg:flex-row gap-8 lg:items-end justify-between">
-                        <ScheduleHero />
-                        <StatusLegend />
-                    </div>
-
-                    {/* Calendar Controls */}
-                    <CalendarControls
-                        currentMonth={currentMonth}
-                        onNext={nextMonth}
-                        onPrev={prevMonth}
-                        onToday={goToToday}
-                    />
-
-                    {/* Calendar Grid */}
-                    <ScheduleCalendarGrid
-                        days={days}
-                        currentMonth={currentMonth}
-                        onDateClick={handleDateClick}
-                    />
-                </Container>
-            </main>
-
-            <Footer />
             <ScrollToTop />
+
+            <div className="relative flex min-h-screen flex-col bg-background">
+                <div className="h-16" />
+
+                <main className="relative z-10 flex-1">
+                    <Container className="py-8 sm:py-12 flex flex-col gap-8">
+                        {/* Hero & Legend */}
+                        <div className="flex flex-col lg:flex-row gap-8 lg:items-end justify-between">
+                            <ScheduleHero />
+                            <StatusLegend />
+                        </div>
+
+                        {/* Calendar Controls */}
+                        <CalendarControls
+                            currentMonth={currentMonth}
+                            onNext={nextMonth}
+                            onPrev={prevMonth}
+                            onToday={goToToday}
+                        />
+
+                        {/* Calendar Grid */}
+                        <ScheduleCalendarGrid
+                            days={days}
+                            currentMonth={currentMonth}
+                            onDateClick={handleDateClick}
+                        />
+                    </Container>
+                </main>
+
+                <Footer />
+            </div>
 
             {/* Modal */}
             <BookingModal
@@ -62,6 +65,6 @@ export default function SchedulePage() {
                 onClose={closeModal}
                 selectedDate={selectedDate}
             />
-        </div>
+        </>
     );
 }

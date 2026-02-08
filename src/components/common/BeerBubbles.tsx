@@ -27,7 +27,7 @@ export function BeerBubbles() {
     }, []);
 
     return (
-        <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
+        <div className="pointer-events-none fixed inset-0 z-0">
             <AnimatePresence>
                 {bubbles.map((bubble) => (
                     <motion.div
